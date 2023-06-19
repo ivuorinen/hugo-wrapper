@@ -260,12 +260,22 @@ download_version() {
             versionDownloadSuffix="/extended"
         fi
 
+        if [ "$os_type" = "macOS" ]; then
+            if [ "$versionToDownload" = "LATEST" ]; then
+                os_type="darwin"
+                os_arch="universal"
+            elif [ "$majorVersion" -ge 0 ] && [ "$minorVersion" -ge 102 ]; then
+                os_type="darwin"
+                os_arch="universal"
+            fi
+        fi
+
         if [ "$versionToDownload" = "LATEST" ]; then
             latest_release=$($DOWNLOAD_COMMAND $DOWNLOAD_SILENT $DOWNLOAD_REDIRECT ${DOWNLOAD_OUTPUT}- https://api.github.com/repos/gohugoio/hugo/releases/latest)
             versionToDownload=$(parse_json "$latest_release" "tag_name")
         fi
 
-        # strip down 'v' from begining of the string if exists
+        # strip down 'v' from beginning of the string if exists
         versionToDownload=$(echo "$versionToDownload" | sed -ne 's/[^0-9]*\(\([0-9]*\.\)\{0,4\}[0-9]*\(\/extended\)*\).*/\1/p')
 
         printf "downloading hugo binary version v%s%s ... " "${versionToDownload}" "${versionDownloadSuffix}"
