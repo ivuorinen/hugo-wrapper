@@ -1,8 +1,8 @@
 # Project variables
-ORG         := khos2ow
+ORG         := ivuorinen
 NAME        := hugo-wrapper
 DESCRIPTION := hugow is a POSIX-style shell script which acts as a wrapper to download and run Hugo binary.
-URL         := https://github.com/khos2ow/hugo-wrapper
+URL         := https://github.com/ivuorinen/hugo-wrapper
 
 # Build variables
 COMMIT_HASH ?= $(shell git rev-parse --short HEAD 2>/dev/null)

@@ -33,13 +33,13 @@ In order to use the `hugow` binary, you only need to download it and place it in
 of your Hugo project.
 
 ```bash
-curl -L -o hugow https://github.com/khos2ow/hugo-wrapper/releases/download/v1.6.0/hugow && chmod +x hugow
+curl -L -o hugow https://github.com/ivuorinen/hugo-wrapper/releases/download/v1.7.0/hugow && chmod +x hugow
 ```
 
 or
 
 ```bash
-wget -O hugow https://github.com/khos2ow/hugo-wrapper/releases/download/v1.6.0/hugow && chmod +x hugow
+wget -O hugow https://github.com/ivuorinen/hugo-wrapper/releases/download/v1.7.0/hugow && chmod +x hugow
 ```
 
 ## Upgrade Hugo Wrapper
@@ -165,5 +165,5 @@ example `.gitignore` content:
 ## License
 
 Licensed under [Apache License version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
-Please see the [LICENSE](https://github.com/khos2ow/hugo-wrapper/blob/master/LICENSE)
+Please see the [LICENSE](https://github.com/ivuorinen/hugo-wrapper/blob/master/LICENSE)
 file included in the root directory of the source tree for extended license details.
